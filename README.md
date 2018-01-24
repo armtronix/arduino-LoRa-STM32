@@ -86,11 +86,16 @@ An [Arduino](http://arduino.cc/) library for sending and receiving data using [L
 
 **NOTES**:
 While Programming through on board USB (CH340 USB to UART Driver required in windows) connected to STM32F103CB's PA10/USART1_RX and PA9/USART1_TX select the following in Arduino IDE
-Board :Generic STM32F103C Series
-Variant : STM32F103CB(20k RAM,128k Flash)
-CPU Speed:72MHz Normal
-Upload Meathod: Serial
-Port should be picked as per windows (Com 1,2,3 etc) 
+
+|Board :Generic STM32F103C Series|
+|Variant : STM32F103CB(20k RAM,128k Flash)|
+|CPU Speed:72MHz Normal|
+|Upload Meathod: Serial|
+|Port should be picked as per windows (Com 1,2,3 etc)| 
+
+
+To add STM32 board to arduino ide use 
+https://github.com/rogerclarkmelbourne/Arduino_STM32
 
 ## Header J7 should be set as following for programming 
 Pin 1 --- Pin 3 Short using Jumper 
