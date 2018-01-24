@@ -102,13 +102,19 @@ To add STM32 board to arduino ide use
 https://github.com/rogerclarkmelbourne/Arduino_STM32
 
 ## Header J7 should be set as following for programming 
+
 Pin 1 --- Pin 3 Short using Jumper 
+
 Pin 4 --- Pin 6 Short using Jumper
+
 Press reset pin S3 before pressing upload button 
 
 ## Header J7 should be set as following to run application program
+
 Pin 3 --- Pin 5 Short using Jumper 
+
 Pin 4 --- Pin 6 Short using Jumper
+
 Press reset pin S3 after this  
 
 
