@@ -23,6 +23,91 @@ An [Arduino](http://arduino.cc/) library for sending and receiving data using [L
 | NSS | PA4 |
 | NRESET | PC13 |
 | DIO0 | PA1 |
+| DIO1 | PB13 |
+| DIO2 | PB12 |
+
+| Charger Header J4 | Battery 3.7V Li  |
+| :---------------------: | :------:|
+| 1 | + |
+| 2 | - |
+
+| Charge Value| Arduino(STM32F103CB)  |
+| :---------------------: | :------:|
+| Divinder 430K/1.5M | PA0 |
+
+
+### Board Header Details
+
+| Header J1 Pins | Arduino(STM32F103CB) |
+| :---------------------: | :------:|
+| 1 | 3.3V |
+| 2 | PB9 |
+| 3 | PB8 |
+| 4 | GND |
+| 5 | GND |
+| 6 | PB1 |
+| 7 | PB0 |
+| 8 | GND |
+| 9 | PA2 |
+| 10 | PA3|
+| 11 | PB10 |
+| 12 | PB11 |
+| 13 | GND |
+
+| Header J2 Pins | Arduino(STM32F103CB) |
+| :---------------------: | :------:|
+| 1 | 5V |
+| 2 | GND |
+| 3 | PB5 |
+| 4 | PB4 |
+| 5 | PB3 |
+| 6 | PA15 |
+| 7 | PA12|
+| 8 | PA11|
+| 9 | PA8|
+| 10 | PB15|
+| 11 | PB14 |
+| 12 | GND |
+| 13 | GND |
+
+| Header J3 Pins | Arduino(STM32F103CB) |
+| :---------------------: | :------:|
+| 1 | 3.3V |
+| 2 | SWIO |
+| 3 | SWCLK|
+| 4 | GND |
+
+
+| Header J5 Pins | Arduino(STM32F103CB) |
+| :---------------------: | :------:|
+| 1 | 3.3V |
+| 2 | GND |
+| 3 | PB6/SCL |
+| 4 | PB7/SDA |
+
+| Header J7 Row One Pins | Arduino(STM32F103CB) | Header J7 Row Two Pins | Arduino(STM32F103CB) |
+| :---------------------: | :------:|:---------------------:|:------:|
+| 1 | 3.3V | 2 |3.3V |
+| 3 | BOOT0 | 4 | BOOT1
+| 5 | GND | 6 | GND |
+
+**NOTES**:
+While Programming through on board USB (CH340 USB to UART Driver required in windows) connected to STM32F103CB's PA10/USART1_RX and PA9/USART1_TX select the following in Arduino IDE
+Board :Generic STM32F103C Series
+Variant : STM32F103CB(20k RAM,128k Flash)
+CPU Speed:72MHz Normal
+Upload Meathod: Serial
+Port should be picked as per windows (Com 1,2,3 etc) 
+
+## Header J7 should be set as following for programming 
+Pin 1 --- Pin 3 Short using Jumper 
+Pin 4 --- Pin 6 Short using Jumper
+Press reset pin S3 before pressing upload button 
+
+## Header J7 should be set as following to run application program
+Pin 3 --- Pin 5 Short using Jumper 
+Pin 4 --- Pin 6 Short using Jumper
+Press reset pin S3 after this  
 
 
 `NSS`, `NRESET`, and `DIO0` pins can be changed by using `LoRa.setPins(ss, reset, dio0)`. `DIO0` pin is optional, it is only needed for receive callback mode. If `DIO0` pin is used, it **must** be interrupt capable via [`attachInterrupt(...)`](https://www.arduino.cc/en/Reference/AttachInterrupt).
